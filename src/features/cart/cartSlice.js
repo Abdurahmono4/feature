@@ -32,9 +32,24 @@ const cartSlice = createSlice({
       toast.success("item added to cart");
     },
 
-    clearCart: (state, { payload }) => {},
-    removeItem: (state, { payload }) => {},
-    editItem: (state, { payload }) => {},
+    clearCart: (state, { payload }) => {
+      localStorage.setItem("cart", JSON.stringify(defaultState));
+      return defaultState;
+    },
+    removeItem: (state, { payload }) => {
+      const { cardID } = payload;
+      const product = state.cartItems.find((i) => i.id === cardID);
+      state.cartItems = state.cartItems.filter((i) => i.cardID !== cardID);
+
+      state.numItemsInCart -= product.amount;
+      cartSlice.caseReducers;
+      toast.success("item removed from cart");
+    },
+    editItem: (state, { payload }) => {
+      calculateTotals: (state) => {
+        state.tax;
+      };
+    },
   },
 });
 
