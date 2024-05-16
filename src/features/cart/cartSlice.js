@@ -47,7 +47,7 @@ const cartSlice = createSlice({
     },
     editItem: (state, { payload }) => {
       calculateTotals: (state) => {
-        state.tax = 0.1 * state.cartTotal;124234ve
+        state.tax = 0.1 * state.cartTotal;
         ("");
       };
     },

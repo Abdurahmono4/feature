@@ -26,52 +26,53 @@ function Navbar() {
     document.documentElement.setAttribute("data-theme",theme)
   },[theme])
 
-  return(
-  <nav className="bg-base-200">
-    <div className="navbar align-content">
-       <div className="navbar-start">
-          <NavLink to="/" className="hidden lg:flex btn btn-primary text-3xl items-center">
+  return (
+    <nav className="bg-base-200">
+      <div className="navbar align-content">
+        <div className="navbar-start">
+          <NavLink
+            to="/"
+            className="hidden lg:flex btn btn-primary text-3xl items-center"
+          >
             C
           </NavLink>
           {/* DROPDOWN */}
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <FaBarsStaggered className="h-6 w-6"/>
-            </label>
-           <ul tabIndex={0} className=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52">
-              <NavLinks/>
-           </ul>
+            <ul
+              tabIndex={0}
+              className=" menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
+            >
+              <NavLinks />
+            </ul>
           </div>
-       </div>
-       <div className="navbar-center hidden lg:flex">
-         <ul className="menu menu-horizontal">
-            <NavLinks/>
-         </ul>
-       </div>
-       <div className="navbar-end">
+        </div>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal">
+            <NavLinks />
+          </ul>
+        </div>
+        <div className="navbar-end">
           {/* THEMEICON */}
           <label className="swap swap-rotate mt-1 items-center justify-center">
-            <input type="checkbox"
-            onClick={handleClick}
-            />
+            <input type="checkbox" onClick={handleClick} />
             {/* sun icon */}
-             <BsSunFill className="swap-on fill-current w-4 h-4"/>
-             {/* moon icon */}
-             <BsMoonFill className="swap-off fill-current w-4 h-4" /> 
-            </label>
+            <BsSunFill className="swap-on fill-current w-4 h-4" />
+            {/* moon icon */}
+            <BsMoonFill className="swap-off fill-current w-4 h-4" />
+          </label>
           {/* CART LINK */}
           <NavLink to="/cart" className="btn btn-circle btn-md ml-4">
             <div className="indicator">
-               <BsCart3 className="h-6 w-6"/>
-               <span className="badge badge-sm badge-primary indicator-item">
-                 10
-               </span>
+              <BsCart3 className="h-6 w-6" />
+              <span className="badge badge-sm badge-primary indicator-item">
+                10
+              </span>
             </div>
           </NavLink>
-       </div>
-    </div>
-  </nav>
-)
+        </div>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar
